@@ -404,7 +404,7 @@ Each artifact is a standalone file ready to upload directly to Intune (mobilecon
 | Phase | Directory | Status | Files |
 |---|---|---|---|
 | P0 — Breaking Changes | `deliverables/phase0-breaking-changes/` | **Complete** | T01–T07 (8 files) |
-| P1 — Binary Control / Privacy | `deliverables/phase1-security-controls/` | Not started | — |
+| P1 — Binary Control / Privacy | `deliverables/phase1-security-controls/` | **Complete** | T01–T03 (3 files) |
 | P2 — Network DDM | `deliverables/phase2-network-ddm/` | Not started | — |
 | P3 — New MDM Features | `deliverables/phase3-new-features/` | Not started | — |
 | P4 — Status & Monitoring | `deliverables/phase4-status-monitoring/` | Not started | — |
@@ -425,11 +425,21 @@ All files validated (`plutil -lint` for mobileconfig, `python3 -m json.tool` for
 | `P0-T06-lockscreen-restrictions.mobileconfig` | P0-T06 | `com.apple.applicationaccess` | New lock-screen restriction keys |
 | `P0-T07-platformsso-weblogin.mobileconfig` | P0-T07 | `com.apple.extensiblesso` | New PlatformSSO web-login sync keys |
 
+### Phase 1 artifacts (built 2026-06-23)
+
+All files validated (`python3 -m json.tool` for JSON).
+
+| File | Test | Declaration type | Purpose |
+|---|---|---|---|
+| `P1-T01-binary-allowlist.json` | P1-T01 | DDM `app.settings` (AllowedBinaries) | Allowlist: Apple, Microsoft (UBF8T346G9 AppStore+DeveloperID), 1Password (2BUA8C4S2C), Chrome (EQHXZ8M8AV) |
+| `P1-T02-binary-denylist.json` | P1-T02 | DDM `app.settings` (DeniedBinaries) | Denylist: Chrome blocked by TeamID+SigningID |
+| `P1-T03-managed-apps-passthrough.json` | P1-T03 | DDM `app.settings` (AlwaysAllowManagedApps) | Validate MDM-managed apps bypass explicit AllowedBinaries list |
+
 ---
 
 ## Sources Referenced
 
-- Apple Device Management Client Schema repo — `CHANGES.md`, `declarative/`, `mdm/`
+- Apple Device Management Client Schema repo: https://github.com/apple/device-management/tree/seed_OS_27_0
 - Apple WWDC26 Device Management Updates: https://support.apple.com/guide/deployment/device-management-updates-depd638aa061/1/web/1.0
 - Stabilise.io macOS 27 Binary Control analysis: https://stabilise.io/blog/macos-27-mdm-binary-control-pppc-replacement-mac-admins
 - macOS 27 release notes: https://developer.apple.com/documentation/macos-release-notes/macos-27-release-notes

@@ -1,0 +1,43 @@
+{
+  "Type": "com.apple.configuration.app.settings",
+  "Identifier": "com.test.macos27.p1-t01.binary-allowlist",
+  "ServerToken": "",
+  "Payload": {
+    "Allowed": {
+      "AlwaysAllowManagedApps": true,
+      "AllowedBinaries": [
+        {
+          "BinaryIdentifier": {
+            "TeamID": "*APPLE*",
+            "SigningState": "Apple"
+          }
+        },
+        {
+          "BinaryIdentifier": {
+            "TeamID": "UBF8T346G9",
+            "SigningState": "AppStore"
+          }
+        },
+        {
+          "BinaryIdentifier": {
+            "TeamID": "UBF8T346G9",
+            "SigningState": "DeveloperID"
+          }
+        },
+        {
+          "BinaryIdentifier": {
+            "TeamID": "2BUA8C4S2C",
+            "SigningState": "DeveloperID"
+          }
+        },
+        {
+          "BinaryIdentifier": {
+            "TeamID": "EQHXZ8M8AV",
+            "SigningID": "com.google.Chrome",
+            "SigningState": "DeveloperID"
+          }
+        }
+      ]
+    }
+  }
+}

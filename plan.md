@@ -1,7 +1,7 @@
 # macOS 27 Golden Gate — Intune Test Plan
 
 **Branch:** `seed_OS_27_0`  
-**Repo:** Apple Device Management Client Schema (macOS 27.0)  
+**Repo:** [Apple Device Management Client Schema — seed_OS_27_0](https://github.com/apple/device-management/tree/seed_OS_27_0)  
 **Target MDM:** Microsoft Intune  
 **Status:** Beta — macOS 27.0 (Golden Gate Beta 2)  
 **Goal:** Validate all macOS 27 device management changes against an Intune-managed fleet before general availability.
@@ -39,8 +39,8 @@
 |---|---|---|---|---|
 | P0 | Breaking Changes — Software Update | 3 | **Ready** (`phase0-breaking-changes/`) | Fleet loses update enforcement on day 1 of upgrade |
 | P0 | Breaking Changes — PPPC / Restrictions | 4 | **Ready** (`phase0-breaking-changes/`) | Privacy controls silently stop working |
-| P1 | New Security: Binary Control | 3 | Planned | Missed hardening opportunity; compliance gap |
-| P1 | New Security: Privacy Defaults (PPPC Replacement) | 2 | Planned | User permission prompts behave unexpectedly |
+| P1 | New Security: Binary Control | 3 | **Ready** (`phase1-security-controls/`) | Missed hardening opportunity; compliance gap |
+| P1 | New Security: Privacy Defaults (PPPC Replacement) | 2 | See P0-T05 | User permission prompts behave unexpectedly |
 | P2 | New Network DDM Configs | 4 | Planned | VPN/DNS not deployable via new declarative path |
 | P3 | New MDM Features | 4 | Planned | Enhanced logging, PlatformSSO gaps |
 | P3 | Content Caching DDM | 2 | Planned | Legacy AssetCache profile stops working |
@@ -1276,3 +1276,13 @@ Body: {
 | Setup Assistant skip keys | `other/skipkeys.yaml` |
 | Enhanced log commands | `mdm/commands/trigger.enhanced.log.collection.yaml`, `cancel.enhanced.log.collection.yaml` |
 | All changes summary | `CHANGES.md` |
+
+---
+
+## Sources Referenced
+
+- [Apple Device Management Client Schema repo — seed_OS_27_0](https://github.com/apple/device-management/tree/seed_OS_27_0) — `CHANGES.md`, `declarative/`, `mdm/`
+- [Apple WWDC26 Device Management Updates](https://support.apple.com/guide/deployment/device-management-updates-depd638aa061/1/web/1.0)
+- [Stabilise.io — macOS 27 Binary Control / PPPC Replacement analysis](https://stabilise.io/blog/macos-27-mdm-binary-control-pppc-replacement-mac-admins)
+- [macOS 27 Release Notes](https://developer.apple.com/documentation/macos-release-notes/macos-27-release-notes)
+- [Mac Admins News — WWDC26 Golden Gate coverage](https://www.macadmins.news/410-golden-gate/)

@@ -1,0 +1,18 @@
+{
+  "Type": "com.apple.configuration.app.settings",
+  "Identifier": "com.test.macos27.p1-t03.managed-apps-passthrough",
+  "ServerToken": "",
+  "Payload": {
+    "Allowed": {
+      "AlwaysAllowManagedApps": true,
+      "AllowedBinaries": [
+        {
+          "BinaryIdentifier": {
+            "TeamID": "*APPLE*",
+            "SigningState": "Apple"
+          }
+        }
+      ]
+    }
+  }
+}
