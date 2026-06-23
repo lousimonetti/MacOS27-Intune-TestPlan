@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <key>PayloadType</key>
+            <string>com.apple.SoftwareUpdate</string>
+            <key>PayloadIdentifier</key>
+            <string>com.test.macos27.p0-t02.swu-settings.softwareupdate</string>
+            <key>PayloadUUID</key>
+            <string>0C1B8027-9295-488E-8482-DC9EC891DB65</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>PayloadDisplayName</key>
+            <string>Software Update</string>
+            <key>AutomaticCheckEnabled</key>
+            <true/>
+            <key>AutomaticDownload</key>
+            <true/>
+            <key>AutomaticallyInstallMacOSUpdates</key>
+            <false/>
+            <key>CriticalUpdateInstall</key>
+            <true/>
+            <key>ConfigDataInstall</key>
+            <true/>
+        </dict>
+        <dict>
+            <key>PayloadType</key>
+            <string>com.apple.applicationaccess</string>
+            <key>PayloadIdentifier</key>
+            <string>com.test.macos27.p0-t02.swu-settings.restrictions</string>
+            <key>PayloadUUID</key>
+            <string>EFAE230C-A684-49C2-B2E5-ABC84760CAE8</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>PayloadDisplayName</key>
+            <string>Software Update Deferrals</string>
+            <key>forceDelayedSoftwareUpdates</key>
+            <true/>
+            <key>forceDelayedMajorSoftwareUpdates</key>
+            <true/>
+            <key>enforcedSoftwareUpdateMajorOSDeferredInstallDelay</key>
+            <integer>14</integer>
+            <key>enforcedSoftwareUpdateMinorOSDeferredInstallDelay</key>
+            <integer>7</integer>
+            <key>enforcedSoftwareUpdateNonOSDeferredInstallDelay</key>
+            <integer>3</integer>
+        </dict>
+    </array>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadIdentifier</key>
+    <string>com.test.macos27.p0-t02.swu-settings</string>
+    <key>PayloadUUID</key>
+    <string>8EF9FD9E-9300-4B22-B714-748E555E54C1</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+    <key>PayloadDisplayName</key>
+    <string>P0-T02 Software Update Settings (legacy)</string>
+    <key>PayloadDescription</key>
+    <string>Legacy mobileconfig equivalent of the com.apple.configuration.softwareupdate.settings DDM declaration. Maps automatic actions to the SoftwareUpdate payload and deferral periods to the Restrictions payload. Note: AllowStandardUserOSUpdates has no legacy equivalent and is omitted.</string>
+    <key>PayloadOrganization</key>
+    <string>macOS 27 Intune Test Plan</string>
+    <key>PayloadScope</key>
+    <string>System</string>
+</dict>
+</plist>

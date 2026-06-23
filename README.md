@@ -86,6 +86,19 @@ POST https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations
 ```
 with the JSON declaration as the body.
 
+### Legacy `.mobileconfig` versions
+
+For admins who prefer the **Custom Profile** upload path, `.mobileconfig` conversions of
+the DDM JSON declarations live in [`deliverables/mobileconfig/`](deliverables/mobileconfig/):
+
+- `deliverables/mobileconfig/` — **faithful** conversions onto real legacy payloads
+  (Software Update, SCEP, IKEv2 VPN, DNS, Web Content Filter), with Intune testing guidance.
+- `deliverables/mobileconfig/experimental/` — **best-effort** conversions of DDM-only
+  features (binary control, privacy pre-grant, relay, content cache, etc.) that most likely
+  will **not** apply on macOS 27. Read that folder's README before using.
+
+The original `.json` declarations remain the source of truth and recommended artifact.
+
 ---
 
 ## Prerequisites

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  EXPERIMENTAL — NOT a supported legacy payload.
+  Content Caching (com.apple.configuration.content-cache.settings) is configured via
+  DDM (or locally via AssetCacheManagerUtil / the legacy com.apple.AssetCache.managed
+  defaults). There is no general-purpose legacy mobileconfig payload that accepts the
+  full DDM key set below. macOS will likely reject or ignore it. Deploy the DDM JSON.
+-->
+<plist version="1.0">
+<dict>
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <key>PayloadType</key>
+            <string>com.apple.configuration.content-cache.settings</string>
+            <key>PayloadIdentifier</key>
+            <string>com.test.macos27.p3-t02.content-cache.payload</string>
+            <key>PayloadUUID</key>
+            <string>BC98D036-5E2C-423C-A680-24A0F7F8B616</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>PayloadDisplayName</key>
+            <string>Content Cache (experimental)</string>
+            <key>AutoActivation</key>
+            <true/>
+            <key>AllowPersonalCaching</key>
+            <false/>
+            <key>AllowSharedCaching</key>
+            <true/>
+            <key>CacheLimit</key>
+            <integer>107374182400</integer>
+            <key>LocalSubnetsOnly</key>
+            <false/>
+            <key>ListenRanges</key>
+            <array>
+                <dict>
+                    <key>type</key>
+                    <string>IPv4</string>
+                    <key>first</key>
+                    <string>10.0.0.1</string>
+                    <key>last</key>
+                    <string>10.0.255.254</string>
+                </dict>
+            </array>
+            <key>ListenRangesOnly</key>
+            <true/>
+            <key>KeepAwake</key>
+            <true/>
+            <key>DisplayAlerts</key>
+            <false/>
+            <key>DeclarativeStatusInterval</key>
+            <integer>300</integer>
+            <key>ManagementStatusTarget</key>
+            <string>https://monitoring.yourcompany.com/content-cache</string>
+            <key>ManagementSecurityConfig</key>
+            <string>no-cert</string>
+            <key>ManagementReportingInterval</key>
+            <integer>300</integer>
+        </dict>
+    </array>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadIdentifier</key>
+    <string>com.test.macos27.p3-t02.content-cache</string>
+    <key>PayloadUUID</key>
+    <string>144B1CC9-9D6A-4BCE-9046-854D9110BD31</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+    <key>PayloadDisplayName</key>
+    <string>P3-T02 Content Cache (EXPERIMENTAL)</string>
+    <key>PayloadDescription</key>
+    <string>EXPERIMENTAL best-effort wrapper. No legacy payload accepts this full key set. Use the DDM JSON declaration.</string>
+    <key>PayloadOrganization</key>
+    <string>macOS 27 Intune Test Plan</string>
+    <key>PayloadScope</key>
+    <string>System</string>
+</dict>
+</plist>

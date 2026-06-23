@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  EXPERIMENTAL — structure differs from the DDM declaration.
+  Legacy Always-On VPN (com.apple.vpn.managed, VPNType "AlwaysOn") exists but was
+  designed primarily for iOS/iPadOS supervised devices and its schema does not match
+  the macOS 27 com.apple.configuration.network.vpn.always-on TunnelConfigurations
+  shape. The mapping below is best-effort and may not apply on macOS. Prefer the
+  DDM JSON declaration. The referenced certificate (P2-T01 SCEP) must also be installed.
+-->
+<plist version="1.0">
+<dict>
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <key>PayloadType</key>
+            <string>com.apple.vpn.managed</string>
+            <key>PayloadIdentifier</key>
+            <string>com.test.macos27.p2-t03.always-on-vpn.vpn</string>
+            <key>PayloadUUID</key>
+            <string>70E88156-D0D5-4E10-BFCA-9802325BAD2A</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>PayloadDisplayName</key>
+            <string>Always-On VPN (experimental)</string>
+            <key>UserDefinedName</key>
+            <string>Corporate Always-On VPN (legacy)</string>
+            <key>VPNType</key>
+            <string>AlwaysOn</string>
+            <key>AlwaysOn</key>
+            <dict>
+                <key>TunnelConfigurations</key>
+                <array>
+                    <dict>
+                        <key>Protocol</key>
+                        <string>IKEv2</string>
+                        <key>RemoteAddress</key>
+                        <string>always-on-vpn.yourcompany.com</string>
+                        <key>AuthenticationMethod</key>
+                        <string>Certificate</string>
+                        <key>PayloadCertificateUUID</key>
+                        <string>62AE3DDB-583E-4AF0-BECA-9BF65C06E7BA</string>
+                    </dict>
+                </array>
+                <key>AllowAllCaptiveNetworkPlugins</key>
+                <false/>
+                <key>AllowCaptiveWebSheet</key>
+                <true/>
+                <key>ServiceExceptions</key>
+                <array>
+                    <dict>
+                        <key>ServiceName</key>
+                        <string>VoiceMail</string>
+                        <key>Action</key>
+                        <string>AllowTrafficOutside</string>
+                    </dict>
+                    <dict>
+                        <key>ServiceName</key>
+                        <string>AirPrint</string>
+                        <key>Action</key>
+                        <string>AllowTrafficOutside</string>
+                    </dict>
+                </array>
+            </dict>
+        </dict>
+    </array>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadIdentifier</key>
+    <string>com.test.macos27.p2-t03.always-on-vpn</string>
+    <key>PayloadUUID</key>
+    <string>361F3547-304E-4E9D-96D7-9AB8D8583841</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+    <key>PayloadDisplayName</key>
+    <string>P2-T03 Always-On VPN (EXPERIMENTAL)</string>
+    <key>PayloadDescription</key>
+    <string>EXPERIMENTAL best-effort mapping of the always-on VPN DDM declaration. Prefer the DDM JSON declaration.</string>
+    <key>PayloadOrganization</key>
+    <string>macOS 27 Intune Test Plan</string>
+    <key>PayloadScope</key>
+    <string>System</string>
+</dict>
+</plist>

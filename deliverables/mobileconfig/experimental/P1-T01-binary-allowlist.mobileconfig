@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  EXPERIMENTAL — NOT a supported legacy payload.
+  Binary/execution control (com.apple.configuration.app.settings -> Allowed) is a
+  macOS 26+/27 DDM-only capability. There is NO legacy mobileconfig payload that
+  allowlists binaries by TeamID/SigningID/SigningState. macOS will reject or ignore
+  the payload below. Deploy the DDM JSON declaration instead.
+-->
+<plist version="1.0">
+<dict>
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <key>PayloadType</key>
+            <string>com.apple.configuration.app.settings</string>
+            <key>PayloadIdentifier</key>
+            <string>com.test.macos27.p1-t01.binary-allowlist.payload</string>
+            <key>PayloadUUID</key>
+            <string>807101EC-1B96-4D07-B99C-04125F1BE68F</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>PayloadDisplayName</key>
+            <string>Binary Allowlist (experimental)</string>
+            <key>Allowed</key>
+            <dict>
+                <key>AlwaysAllowManagedApps</key>
+                <true/>
+                <key>AllowedBinaries</key>
+                <array>
+                    <dict>
+                        <key>BinaryIdentifier</key>
+                        <dict>
+                            <key>TeamID</key>
+                            <string>*APPLE*</string>
+                            <key>SigningState</key>
+                            <string>Apple</string>
+                        </dict>
+                    </dict>
+                    <dict>
+                        <key>BinaryIdentifier</key>
+                        <dict>
+                            <key>TeamID</key>
+                            <string>UBF8T346G9</string>
+                            <key>SigningState</key>
+                            <string>AppStore</string>
+                        </dict>
+                    </dict>
+                    <dict>
+                        <key>BinaryIdentifier</key>
+                        <dict>
+                            <key>TeamID</key>
+                            <string>UBF8T346G9</string>
+                            <key>SigningState</key>
+                            <string>DeveloperID</string>
+                        </dict>
+                    </dict>
+                    <dict>
+                        <key>BinaryIdentifier</key>
+                        <dict>
+                            <key>TeamID</key>
+                            <string>2BUA8C4S2C</string>
+                            <key>SigningState</key>
+                            <string>DeveloperID</string>
+                        </dict>
+                    </dict>
+                    <dict>
+                        <key>BinaryIdentifier</key>
+                        <dict>
+                            <key>TeamID</key>
+                            <string>EQHXZ8M8AV</string>
+                            <key>SigningID</key>
+                            <string>com.google.Chrome</string>
+                            <key>SigningState</key>
+                            <string>DeveloperID</string>
+                        </dict>
+                    </dict>
+                </array>
+            </dict>
+        </dict>
+    </array>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadIdentifier</key>
+    <string>com.test.macos27.p1-t01.binary-allowlist</string>
+    <key>PayloadUUID</key>
+    <string>E64270E1-7D92-4590-803A-AC1E86BE7FF6</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+    <key>PayloadDisplayName</key>
+    <string>P1-T01 Binary Allowlist (EXPERIMENTAL)</string>
+    <key>PayloadDescription</key>
+    <string>EXPERIMENTAL best-effort wrapper. No legacy payload exists for binary allowlisting. Use the DDM JSON declaration.</string>
+    <key>PayloadOrganization</key>
+    <string>macOS 27 Intune Test Plan</string>
+    <key>PayloadScope</key>
+    <string>System</string>
+</dict>
+</plist>

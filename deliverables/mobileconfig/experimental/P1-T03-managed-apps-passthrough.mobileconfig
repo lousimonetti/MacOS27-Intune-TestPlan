@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  EXPERIMENTAL — NOT a supported legacy payload.
+  Managed-apps passthrough (com.apple.configuration.app.settings -> Allowed) is a
+  macOS 26+/27 DDM-only capability with no legacy mobileconfig equivalent.
+  macOS will reject or ignore the payload below. Deploy the DDM JSON declaration.
+-->
+<plist version="1.0">
+<dict>
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <key>PayloadType</key>
+            <string>com.apple.configuration.app.settings</string>
+            <key>PayloadIdentifier</key>
+            <string>com.test.macos27.p1-t03.managed-apps-passthrough.payload</string>
+            <key>PayloadUUID</key>
+            <string>2608655B-64C0-4532-9A18-77CB81CA1A0F</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>PayloadDisplayName</key>
+            <string>Managed Apps Passthrough (experimental)</string>
+            <key>Allowed</key>
+            <dict>
+                <key>AlwaysAllowManagedApps</key>
+                <true/>
+                <key>AllowedBinaries</key>
+                <array>
+                    <dict>
+                        <key>BinaryIdentifier</key>
+                        <dict>
+                            <key>TeamID</key>
+                            <string>*APPLE*</string>
+                            <key>SigningState</key>
+                            <string>Apple</string>
+                        </dict>
+                    </dict>
+                </array>
+            </dict>
+        </dict>
+    </array>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadIdentifier</key>
+    <string>com.test.macos27.p1-t03.managed-apps-passthrough</string>
+    <key>PayloadUUID</key>
+    <string>3EDE103B-27A2-4261-81FF-0D1259348B75</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+    <key>PayloadDisplayName</key>
+    <string>P1-T03 Managed Apps Passthrough (EXPERIMENTAL)</string>
+    <key>PayloadDescription</key>
+    <string>EXPERIMENTAL best-effort wrapper. No legacy payload exists for binary control. Use the DDM JSON declaration.</string>
+    <key>PayloadOrganization</key>
+    <string>macOS 27 Intune Test Plan</string>
+    <key>PayloadScope</key>
+    <string>System</string>
+</dict>
+</plist>

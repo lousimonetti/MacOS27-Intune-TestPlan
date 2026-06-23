@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  EXPERIMENTAL — semantically lossy.
+  This maps com.apple.configuration.app.settings (Privacy / PermissionDefaults) onto
+  the legacy PPPC payload (com.apple.TCC.configuration-profile-policy). The whole
+  reason Apple added the DDM app.settings privacy declaration is that legacy PPPC
+  CANNOT pre-grant Camera, Microphone, Bluetooth, or Local Network — those services
+  are ignored (or only support "Deny") via PPPC. The Allow entries below will NOT be
+  honored by macOS. Use the DDM JSON declaration to actually pre-approve these.
+  CodeRequirement strings below are placeholders — replace with the real designated
+  requirement from `codesign -dr - <app>` before any non-lab use.
+-->
+<plist version="1.0">
+<dict>
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <key>PayloadType</key>
+            <string>com.apple.TCC.configuration-profile-policy</string>
+            <key>PayloadIdentifier</key>
+            <string>com.test.macos27.p0-t05.app-privacy.pppc</string>
+            <key>PayloadUUID</key>
+            <string>B45829CD-2D2F-4026-8B96-3413116C4C7E</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>PayloadDisplayName</key>
+            <string>Privacy Preferences (experimental)</string>
+            <key>Services</key>
+            <dict>
+                <key>Camera</key>
+                <array>
+                    <dict>
+                        <key>Identifier</key>
+                        <string>com.microsoft.teams</string>
+                        <key>IdentifierType</key>
+                        <string>bundleID</string>
+                        <key>CodeRequirement</key>
+                        <string>identifier "com.microsoft.teams" and anchor apple generic and certificate leaf[subject.OU] = "2BUA8C4S2C"</string>
+                        <key>Authorization</key>
+                        <string>Allow</string>
+                    </dict>
+                    <dict>
+                        <key>Identifier</key>
+                        <string>com.google.Chrome</string>
+                        <key>IdentifierType</key>
+                        <string>bundleID</string>
+                        <key>CodeRequirement</key>
+                        <string>identifier "com.google.Chrome" and anchor apple generic and certificate leaf[subject.OU] = "EQHXZ8M8AV"</string>
+                        <key>Authorization</key>
+                        <string>Allow</string>
+                    </dict>
+                </array>
+                <key>Microphone</key>
+                <array>
+                    <dict>
+                        <key>Identifier</key>
+                        <string>com.microsoft.teams</string>
+                        <key>IdentifierType</key>
+                        <string>bundleID</string>
+                        <key>CodeRequirement</key>
+                        <string>identifier "com.microsoft.teams" and anchor apple generic and certificate leaf[subject.OU] = "2BUA8C4S2C"</string>
+                        <key>Authorization</key>
+                        <string>Allow</string>
+                    </dict>
+                    <dict>
+                        <key>Identifier</key>
+                        <string>com.microsoft.onenote</string>
+                        <key>IdentifierType</key>
+                        <string>bundleID</string>
+                        <key>CodeRequirement</key>
+                        <string>identifier "com.microsoft.onenote" and anchor apple generic and certificate leaf[subject.OU] = "UBF8T346G9"</string>
+                        <key>Authorization</key>
+                        <string>Allow</string>
+                    </dict>
+                    <dict>
+                        <key>Identifier</key>
+                        <string>com.google.Chrome</string>
+                        <key>IdentifierType</key>
+                        <string>bundleID</string>
+                        <key>CodeRequirement</key>
+                        <string>identifier "com.google.Chrome" and anchor apple generic and certificate leaf[subject.OU] = "EQHXZ8M8AV"</string>
+                        <key>Authorization</key>
+                        <string>Allow</string>
+                    </dict>
+                </array>
+            </dict>
+        </dict>
+    </array>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadIdentifier</key>
+    <string>com.test.macos27.p0-t05.app-privacy</string>
+    <key>PayloadUUID</key>
+    <string>24213557-AB58-48A6-B621-8B6991C91CBD</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+    <key>PayloadDisplayName</key>
+    <string>P0-T05 App Privacy Defaults (EXPERIMENTAL PPPC)</string>
+    <key>PayloadDescription</key>
+    <string>EXPERIMENTAL. Legacy PPPC cannot pre-grant Camera/Microphone/Bluetooth/LocalNetwork. Use the DDM JSON declaration for real pre-approval.</string>
+    <key>PayloadOrganization</key>
+    <string>macOS 27 Intune Test Plan</string>
+    <key>PayloadScope</key>
+    <string>System</string>
+</dict>
+</plist>

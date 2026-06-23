@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  EXPERIMENTAL — NOT a supported legacy payload.
+  Network Relay (com.apple.configuration.network.relay) is a DDM-only capability
+  introduced for macOS/iOS; there is no legacy mobileconfig payload for HTTP/3 relay
+  configuration. macOS will reject or ignore the payload below. Deploy the DDM JSON.
+-->
+<plist version="1.0">
+<dict>
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <key>PayloadType</key>
+            <string>com.apple.configuration.network.relay</string>
+            <key>PayloadIdentifier</key>
+            <string>com.test.macos27.p2-t04.network-relay.payload</string>
+            <key>PayloadUUID</key>
+            <string>DC044351-FF3D-4461-B379-F4E489AAAB10</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>PayloadDisplayName</key>
+            <string>Network Relay (experimental)</string>
+            <key>Relays</key>
+            <array>
+                <dict>
+                    <key>HTTP3RelayURL</key>
+                    <string>https://relay.yourcompany.com/relay</string>
+                    <key>RawPublicKeys</key>
+                    <array/>
+                </dict>
+            </array>
+            <key>MatchDomains</key>
+            <array>
+                <string>internal.yourcompany.com</string>
+                <string>corp.yourcompany.com</string>
+            </array>
+            <key>ExcludedDomains</key>
+            <array>
+                <string>public.yourcompany.com</string>
+            </array>
+        </dict>
+    </array>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadIdentifier</key>
+    <string>com.test.macos27.p2-t04.network-relay</string>
+    <key>PayloadUUID</key>
+    <string>22DF5A7D-492A-4B45-8533-3E3811D26E4F</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+    <key>PayloadDisplayName</key>
+    <string>P2-T04 Network Relay (EXPERIMENTAL)</string>
+    <key>PayloadDescription</key>
+    <string>EXPERIMENTAL best-effort wrapper. No legacy payload exists for network relay. Use the DDM JSON declaration.</string>
+    <key>PayloadOrganization</key>
+    <string>macOS 27 Intune Test Plan</string>
+    <key>PayloadScope</key>
+    <string>System</string>
+</dict>
+</plist>
