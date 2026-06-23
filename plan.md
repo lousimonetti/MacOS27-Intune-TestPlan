@@ -41,9 +41,9 @@
 | P0 | Breaking Changes — PPPC / Restrictions | 4 | **Ready** (`phase0-breaking-changes/`) | Privacy controls silently stop working |
 | P1 | New Security: Binary Control | 3 | **Ready** (`phase1-security-controls/`) | Missed hardening opportunity; compliance gap |
 | P1 | New Security: Privacy Defaults (PPPC Replacement) | 2 | See P0-T05 | User permission prompts behave unexpectedly |
-| P2 | New Network DDM Configs | 4 | Planned | VPN/DNS not deployable via new declarative path |
-| P3 | New MDM Features | 4 | Planned | Enhanced logging, PlatformSSO gaps |
-| P3 | Content Caching DDM | 2 | Planned | Legacy AssetCache profile stops working |
+| P2 | New Network DDM Configs | 4 | **Ready** (`phase2-network-ddm/`) | VPN/DNS not deployable via new declarative path |
+| P3 | New MDM Features | 4 | **Ready** (`phase3-new-features/`) | Enhanced logging, PlatformSSO gaps |
+| P3 | Content Caching DDM | 2 | **Ready** (`phase3-new-features/`) | Legacy AssetCache profile stops working |
 | P4 | Status & Monitoring | 3 | Planned | Intune device health reporting incomplete |
 | P5 | Setup Assistant / Enrollment | 3 | Planned | Enrollment UX broken by new setup panes |
 

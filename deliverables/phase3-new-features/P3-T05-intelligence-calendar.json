@@ -1,0 +1,22 @@
+{
+  "Type": "com.apple.configuration.intelligence.settings",
+  "Identifier": "com.test.macos27.p3-t05.intelligence-calendar",
+  "ServerToken": "",
+  "Payload": {
+    "AllowWritingTools": true,
+    "AllowGenmoji": false,
+    "AllowImagePlayground": false,
+    "Apps": {
+      "Calendar": {
+        "AllowNaturalLanguageEditing": false
+      },
+      "Mail": {
+        "AllowSmartReplies": true,
+        "AllowSummary": true
+      },
+      "Safari": {
+        "AllowSummary": false
+      }
+    }
+  }
+}

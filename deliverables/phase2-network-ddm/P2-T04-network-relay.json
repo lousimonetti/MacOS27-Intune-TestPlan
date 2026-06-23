@@ -1,0 +1,20 @@
+{
+  "Type": "com.apple.configuration.network.relay",
+  "Identifier": "com.test.macos27.p2-t04.network-relay",
+  "ServerToken": "",
+  "Payload": {
+    "Relays": [
+      {
+        "HTTP3RelayURL": "https://relay.yourcompany.com/relay",
+        "RawPublicKeys": []
+      }
+    ],
+    "MatchDomains": [
+      "internal.yourcompany.com",
+      "corp.yourcompany.com"
+    ],
+    "ExcludedDomains": [
+      "public.yourcompany.com"
+    ]
+  }
+}

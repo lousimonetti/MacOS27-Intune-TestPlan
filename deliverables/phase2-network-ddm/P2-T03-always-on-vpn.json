@@ -1,0 +1,29 @@
+{
+  "Type": "com.apple.configuration.network.vpn.always-on",
+  "Identifier": "com.test.macos27.p2-t03.always-on-vpn",
+  "ServerToken": "",
+  "Payload": {
+    "TunnelConfigurations": [
+      {
+        "Identifier": "com.test.macos27.p2-t03.ikev2-always-on",
+        "ServiceType": "IKEv2",
+        "Server": "always-on-vpn.yourcompany.com",
+        "AuthenticationMethod": "Certificate",
+        "ClientCertificateAssetReference": "com.test.macos27.p2-t01.vpn-cert"
+      }
+    ],
+    "AllowedCaptiveNetworkPlugins": [
+      {
+        "BundleID": "com.apple.captiveagent"
+      }
+    ],
+    "ServiceExceptions": [
+      {
+        "ServiceType": "VoiceMail"
+      },
+      {
+        "ServiceType": "AirPrint"
+      }
+    ]
+  }
+}

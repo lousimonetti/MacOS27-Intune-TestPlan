@@ -1,0 +1,21 @@
+{
+  "Type": "com.apple.configuration.network.vpn.ikev2",
+  "Identifier": "com.test.macos27.p2-t01.ikev2-vpn",
+  "ServerToken": "",
+  "Payload": {
+    "Name": "Corporate IKEv2 VPN (DDM)",
+    "Server": "vpn.yourcompany.com",
+    "AuthenticationMethod": "Certificate",
+    "ClientCertificateAssetReference": "com.test.macos27.p2-t01.vpn-cert",
+    "IKESecurityAssociationParameters": {
+      "EncryptionAlgorithm": "AES-256-GCM",
+      "IntegrityAlgorithm": "SHA2-384",
+      "DiffieHellmanGroup": 20
+    },
+    "ChildSecurityAssociationParameters": {
+      "EncryptionAlgorithm": "AES-256-GCM",
+      "IntegrityAlgorithm": "SHA2-384",
+      "DiffieHellmanGroup": 20
+    }
+  }
+}

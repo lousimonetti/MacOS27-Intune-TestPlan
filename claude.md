@@ -405,8 +405,8 @@ Each artifact is a standalone file ready to upload directly to Intune (mobilecon
 |---|---|---|---|
 | P0 — Breaking Changes | `deliverables/phase0-breaking-changes/` | **Complete** | T01–T07 (8 files) |
 | P1 — Binary Control / Privacy | `deliverables/phase1-security-controls/` | **Complete** | T01–T03 (3 files) |
-| P2 — Network DDM | `deliverables/phase2-network-ddm/` | Not started | — |
-| P3 — New MDM Features | `deliverables/phase3-new-features/` | Not started | — |
+| P2 — Network DDM | `deliverables/phase2-network-ddm/` | **Complete** | T01–T04 (5 files) |
+| P3 — New MDM Features | `deliverables/phase3-new-features/` | **Complete** | T01–T05 (5 files) |
 | P4 — Status & Monitoring | `deliverables/phase4-status-monitoring/` | Not started | — |
 | P5 — Setup Assistant / Enrollment | `deliverables/phase5-enrollment/` | Not started | — |
 
@@ -434,6 +434,30 @@ All files validated (`python3 -m json.tool` for JSON).
 | `P1-T01-binary-allowlist.json` | P1-T01 | DDM `app.settings` (AllowedBinaries) | Allowlist: Apple, Microsoft (UBF8T346G9 AppStore+DeveloperID), 1Password (2BUA8C4S2C), Chrome (EQHXZ8M8AV) |
 | `P1-T02-binary-denylist.json` | P1-T02 | DDM `app.settings` (DeniedBinaries) | Denylist: Chrome blocked by TeamID+SigningID |
 | `P1-T03-managed-apps-passthrough.json` | P1-T03 | DDM `app.settings` (AlwaysAllowManagedApps) | Validate MDM-managed apps bypass explicit AllowedBinaries list |
+
+### Phase 2 artifacts (built 2026-06-23)
+
+All files validated (`python3 -m json.tool` for JSON).
+
+| File | Test | Declaration type | Purpose |
+|---|---|---|---|
+| `P2-T01-vpn-cert-scep.json` | P2-T01 | `com.apple.asset.credential.scep` | SCEP credential asset for VPN certificate lifecycle — deploy first |
+| `P2-T01-ikev2-vpn.json` | P2-T01 | `com.apple.configuration.network.vpn.ikev2` | IKEv2 VPN referencing SCEP asset — AES-256-GCM, DH group 20 |
+| `P2-T02-dns-settings.json` | P2-T02 | `com.apple.configuration.network.dns-settings` | DoH encrypted DNS for corporate resolver |
+| `P2-T03-always-on-vpn.json` | P2-T03 | `com.apple.configuration.network.vpn.always-on` | Always-on VPN (supervised only); reuses P2-T01 SCEP asset |
+| `P2-T04-network-relay.json` | P2-T04 | `com.apple.configuration.network.relay` | HTTP/3 MASQUE relay for split-tunneled internal domains |
+
+### Phase 3 artifacts (built 2026-06-23)
+
+All files validated (`python3 -m json.tool` for JSON).
+
+| File | Test | Type | Purpose |
+|---|---|---|---|
+| `P3-T01-content-filter-plugin.json` | P3-T01 | DDM `webcontent-filter.plugin` | Web content filter via DDM — replaces `com.apple.webcontent-filter` |
+| `P3-T02-content-cache.json` | P3-T02 | DDM `content-cache.settings` | Content caching DDM — replaces `com.apple.AssetCache.managed`; 100 GB limit, 5-min status interval |
+| `P3-T03-trigger-enhanced-log-collection.json` | P3-T03 | MDM command reference | Graph API body for TriggerEnhancedLogCollection — not a deployable profile |
+| `P3-T04-cancel-enhanced-log-collection.json` | P3-T04 | MDM command reference | Graph API body for CancelEnhancedLogCollection — not a deployable profile |
+| `P3-T05-intelligence-calendar.json` | P3-T05 | DDM `intelligence.settings` | Tests new `Apps.Calendar.AllowNaturalLanguageEditing` key (27.0+) |
 
 ---
 

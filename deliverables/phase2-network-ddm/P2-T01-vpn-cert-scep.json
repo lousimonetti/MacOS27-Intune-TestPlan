@@ -1,0 +1,16 @@
+{
+  "Type": "com.apple.asset.credential.scep",
+  "Identifier": "com.test.macos27.p2-t01.vpn-cert",
+  "ServerToken": "",
+  "Payload": {
+    "Name": "VPN Client Certificate",
+    "URL": "https://scep.yourcompany.com/scep",
+    "Subject": [
+      [["CN", "{{SERIALNUMBER}}"]]
+    ],
+    "Challenge": "REPLACE_WITH_SCEP_CHALLENGE",
+    "KeyType": "RSA",
+    "KeySize": 2048,
+    "KeyUsage": 5
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "Type": "com.apple.configuration.content-cache.settings",
+  "Identifier": "com.test.macos27.p3-t02.content-cache",
+  "ServerToken": "",
+  "Payload": {
+    "AutoActivation": true,
+    "AllowPersonalCaching": false,
+    "AllowSharedCaching": true,
+    "CacheLimit": 107374182400,
+    "LocalSubnetsOnly": false,
+    "ListenRanges": [
+      {
+        "type": "IPv4",
+        "first": "10.0.0.1",
+        "last": "10.0.255.254"
+      }
+    ],
+    "ListenRangesOnly": true,
+    "KeepAwake": true,
+    "DisplayAlerts": false,
+    "DeclarativeStatusInterval": 300,
+    "ManagementStatusTarget": "https://monitoring.yourcompany.com/content-cache",
+    "ManagementSecurityConfig": "no-cert",
+    "ManagementReportingInterval": 300
+  }
+}

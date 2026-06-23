@@ -1,0 +1,23 @@
+{
+  "Type": "com.apple.configuration.network.dns-settings",
+  "Identifier": "com.test.macos27.p2-t02.dns-settings",
+  "ServerToken": "",
+  "Payload": {
+    "DNSProtocol": "HTTPS",
+    "ServerURL": "https://dns.yourcompany.com/dns-query",
+    "ServerAddresses": [
+      "192.168.1.53",
+      "192.168.1.54"
+    ],
+    "OnDemandRules": [
+      {
+        "Action": "Connect",
+        "InterfaceTypeMatch": "WiFi"
+      },
+      {
+        "Action": "Connect",
+        "InterfaceTypeMatch": "Cellular"
+      }
+    ]
+  }
+}

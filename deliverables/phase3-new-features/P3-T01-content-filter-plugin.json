@@ -1,0 +1,22 @@
+{
+  "Type": "com.apple.configuration.webcontent-filter.plugin",
+  "Identifier": "com.test.macos27.p3-t01.content-filter",
+  "ServerToken": "",
+  "Payload": {
+    "VisibleName": "Corporate Web Filter (DDM)",
+    "PluginBundleID": "com.yourvendor.contentfilter.extension",
+    "ServerAddress": "filter.yourcompany.com",
+    "Organization": "Your Company",
+    "VendorConfig": {
+      "LicenseKey": "REPLACE_WITH_LICENSE_KEY",
+      "PolicyGroup": "corporate-default"
+    },
+    "Filter": {
+      "Grade": "inspector",
+      "Sockets": {
+        "Enabled": true,
+        "ProviderComposedIdentifier": "com.yourvendor.contentfilter.dataprovider {anchor apple generic and identifier \"com.yourvendor.contentfilter.dataprovider\"}"
+      }
+    }
+  }
+}
