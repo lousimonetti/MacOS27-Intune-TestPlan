@@ -396,6 +396,37 @@ softwareupdate -l
 
 ---
 
+## Deliverables Progress
+
+Track what has been built and pushed. Artifacts live in `deliverables/` subdirectories.
+Each artifact is a standalone file ready to upload directly to Intune (mobileconfig or DDM JSON).
+
+| Phase | Directory | Status | Files |
+|---|---|---|---|
+| P0 — Breaking Changes | `deliverables/phase0-breaking-changes/` | **Complete** | T01–T07 (8 files) |
+| P1 — Binary Control / Privacy | `deliverables/phase1-security-controls/` | Not started | — |
+| P2 — Network DDM | `deliverables/phase2-network-ddm/` | Not started | — |
+| P3 — New MDM Features | `deliverables/phase3-new-features/` | Not started | — |
+| P4 — Status & Monitoring | `deliverables/phase4-status-monitoring/` | Not started | — |
+| P5 — Setup Assistant / Enrollment | `deliverables/phase5-enrollment/` | Not started | — |
+
+### Phase 0 artifacts (built 2026-06-23)
+
+All files validated (`plutil -lint` for mobileconfig, `python3 -m json.tool` for JSON).
+
+| File | Test | Payload type | Purpose |
+|---|---|---|---|
+| `P0-T01-legacy-softwareupdate.mobileconfig` | P0-T01 | `com.apple.SoftwareUpdate` | Verify payload type is rejected on macOS 27 |
+| `P0-T02-swu-settings.json` | P0-T02 | DDM `softwareupdate.settings` | DDM deferral/auto-action replacement |
+| `P0-T02-swu-enforcement.json` | P0-T02 | DDM `softwareupdate.enforcement.specific` | Deadline enforcement declaration |
+| `P0-T03-removed-restriction-keys.mobileconfig` | P0-T03 | `com.apple.applicationaccess` | Verify removed SU keys are silently ignored |
+| `P0-T04-legacy-pppc.mobileconfig` | P0-T04 | `com.apple.TCC.configuration-profile-policy` | Observe PPPC deprecation behavior |
+| `P0-T05-app-settings-privacy.json` | P0-T05 | DDM `app.settings` (Privacy) | Validate consolidated consent prompt |
+| `P0-T06-lockscreen-restrictions.mobileconfig` | P0-T06 | `com.apple.applicationaccess` | New lock-screen restriction keys |
+| `P0-T07-platformsso-weblogin.mobileconfig` | P0-T07 | `com.apple.extensiblesso` | New PlatformSSO web-login sync keys |
+
+---
+
 ## Sources Referenced
 
 - Apple Device Management Client Schema repo — `CHANGES.md`, `declarative/`, `mdm/`

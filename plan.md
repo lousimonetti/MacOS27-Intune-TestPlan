@@ -6,6 +6,8 @@
 **Status:** Beta — macOS 27.0 (Golden Gate Beta 2)  
 **Goal:** Validate all macOS 27 device management changes against an Intune-managed fleet before general availability.
 
+**Artifacts:** `deliverables/` — deployable mobileconfig and DDM JSON files, one directory per phase.
+
 ---
 
 ## Environment Requirements
@@ -33,17 +35,17 @@
 
 ## Test Matrix Summary
 
-| Priority | Area | Tests | Risk if Skipped |
-|---|---|---|---|
-| P0 | Breaking Changes — Software Update | 3 | Fleet loses update enforcement on day 1 of upgrade |
-| P0 | Breaking Changes — PPPC / Restrictions | 4 | Privacy controls silently stop working |
-| P1 | New Security: Binary Control | 3 | Missed hardening opportunity; compliance gap |
-| P1 | New Security: Privacy Defaults (PPPC Replacement) | 2 | User permission prompts behave unexpectedly |
-| P2 | New Network DDM Configs | 4 | VPN/DNS not deployable via new declarative path |
-| P3 | New MDM Features | 4 | Enhanced logging, PlatformSSO gaps |
-| P3 | Content Caching DDM | 2 | Legacy AssetCache profile stops working |
-| P4 | Status & Monitoring | 3 | Intune device health reporting incomplete |
-| P5 | Setup Assistant / Enrollment | 3 | Enrollment UX broken by new setup panes |
+| Priority | Area | Tests | Artifacts | Risk if Skipped |
+|---|---|---|---|---|
+| P0 | Breaking Changes — Software Update | 3 | **Ready** (`phase0-breaking-changes/`) | Fleet loses update enforcement on day 1 of upgrade |
+| P0 | Breaking Changes — PPPC / Restrictions | 4 | **Ready** (`phase0-breaking-changes/`) | Privacy controls silently stop working |
+| P1 | New Security: Binary Control | 3 | Planned | Missed hardening opportunity; compliance gap |
+| P1 | New Security: Privacy Defaults (PPPC Replacement) | 2 | Planned | User permission prompts behave unexpectedly |
+| P2 | New Network DDM Configs | 4 | Planned | VPN/DNS not deployable via new declarative path |
+| P3 | New MDM Features | 4 | Planned | Enhanced logging, PlatformSSO gaps |
+| P3 | Content Caching DDM | 2 | Planned | Legacy AssetCache profile stops working |
+| P4 | Status & Monitoring | 3 | Planned | Intune device health reporting incomplete |
+| P5 | Setup Assistant / Enrollment | 3 | Planned | Enrollment UX broken by new setup panes |
 
 ---
 
@@ -71,6 +73,8 @@ All legacy software update MDM commands and restrictions are **removed** in macO
 ---
 
 ### P0-T01: Legacy SoftwareUpdate Profile Removed
+
+> **Artifact:** `deliverables/phase0-breaking-changes/P0-T01-legacy-softwareupdate.mobileconfig`
 
 **What:** Verify that a deployed `com.apple.SoftwareUpdate` profile is rejected or ignored on macOS 27.
 
@@ -130,6 +134,8 @@ All legacy software update MDM commands and restrictions are **removed** in macO
 ---
 
 ### P0-T02: DDM Software Update Enforcement (Replacement Path)
+
+> **Artifacts:** `deliverables/phase0-breaking-changes/P0-T02-swu-settings.json` and `P0-T02-swu-enforcement.json` — deploy both.
 
 **What:** Verify that `com.apple.configuration.softwareupdate.enforcement.specific` and `com.apple.configuration.softwareupdate.settings` function as the required replacement for legacy update management.
 
@@ -191,6 +197,8 @@ All legacy software update MDM commands and restrictions are **removed** in macO
 ---
 
 ### P0-T03: Removed Restriction Keys — Software Update Deferrals
+
+> **Artifact:** `deliverables/phase0-breaking-changes/P0-T03-removed-restriction-keys.mobileconfig`
 
 **What:** Verify that removed restriction keys (`enforcedSoftwareUpdateDelay`, `forceDelayedSoftwareUpdates`, etc.) no longer function or cause errors on macOS 27. This is a regression check.
 
@@ -257,6 +265,8 @@ All legacy software update MDM commands and restrictions are **removed** in macO
 ## P0 — Breaking Changes: PPPC and Restrictions
 
 ### P0-T04: PPPC Profile Deprecation Validation
+
+> **Artifact:** `deliverables/phase0-breaking-changes/P0-T04-legacy-pppc.mobileconfig`
 
 **What:** Verify that `com.apple.TCC.configuration-profile-policy` (PPPC) still installs but confirm behavior is deprecated. Test that the new `com.apple.configuration.app.settings` Privacy section is the correct replacement.
 
@@ -338,6 +348,8 @@ All legacy software update MDM commands and restrictions are **removed** in macO
 
 ### P0-T05: New PPPC Replacement — app.settings Privacy Defaults
 
+> **Artifact:** `deliverables/phase0-breaking-changes/P0-T05-app-settings-privacy.json`
+
 **What:** Verify `com.apple.configuration.app.settings` Privacy.PermissionDefaults functions as the PPPC replacement and presents the single consolidated consent prompt.
 
 **DDM Declaration (JSON for Intune Settings Catalog or custom deployment):**
@@ -386,6 +398,8 @@ All legacy software update MDM commands and restrictions are **removed** in macO
 ---
 
 ### P0-T06: New Lock Screen Restriction Keys
+
+> **Artifact:** `deliverables/phase0-breaking-changes/P0-T06-lockscreen-restrictions.mobileconfig`
 
 **What:** Validate the two new keys in `com.apple.applicationaccess`: `ForceCaptivePortalConnectionFromLockScreen` and `ForceWifiConfigurationOnLockScreen`.
 
@@ -438,6 +452,8 @@ All legacy software update MDM commands and restrictions are **removed** in macO
 ---
 
 ### P0-T07: PlatformSSO New Keys — AllowWebLoginPasswordSync and WebLoginURLAllowList
+
+> **Artifact:** `deliverables/phase0-breaking-changes/P0-T07-platformsso-weblogin.mobileconfig`
 
 **What:** Validate two new PlatformSSO keys in `com.apple.extensiblesso` that control web login password sync behavior. Requires a PlatformSSO-capable extension (e.g., Microsoft Enterprise SSO plugin).
 
