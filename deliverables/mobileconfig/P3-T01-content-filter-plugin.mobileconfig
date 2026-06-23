@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <key>PayloadType</key>
+            <string>com.apple.webcontent-filter</string>
+            <key>PayloadIdentifier</key>
+            <string>com.test.macos27.p3-t01.content-filter.filter</string>
+            <key>PayloadUUID</key>
+            <string>BDA9EBD3-057C-47DC-8882-F6BB80813607</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>PayloadDisplayName</key>
+            <string>Corporate Web Filter</string>
+            <key>FilterType</key>
+            <string>Plugin</string>
+            <key>UserDefinedName</key>
+            <string>Corporate Web Filter (legacy)</string>
+            <key>PluginBundleID</key>
+            <string>com.yourvendor.contentfilter.extension</string>
+            <key>FilterBrowsers</key>
+            <true/>
+            <key>FilterSockets</key>
+            <true/>
+            <key>FilterDataProviderBundleIdentifier</key>
+            <string>com.yourvendor.contentfilter.dataprovider</string>
+            <key>FilterDataProviderDesignatedRequirement</key>
+            <string>anchor apple generic and identifier "com.yourvendor.contentfilter.dataprovider"</string>
+            <key>FilterGrade</key>
+            <string>inspector</string>
+            <key>ServerAddress</key>
+            <string>filter.yourcompany.com</string>
+            <key>Organization</key>
+            <string>Your Company</string>
+            <key>VendorConfig</key>
+            <dict>
+                <key>LicenseKey</key>
+                <string>REPLACE_WITH_LICENSE_KEY</string>
+                <key>PolicyGroup</key>
+                <string>corporate-default</string>
+            </dict>
+        </dict>
+    </array>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadIdentifier</key>
+    <string>com.test.macos27.p3-t01.content-filter</string>
+    <key>PayloadUUID</key>
+    <string>037D002C-0B77-40C3-8361-F99A6950DBEE</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+    <key>PayloadDisplayName</key>
+    <string>P3-T01 Web Content Filter (legacy)</string>
+    <key>PayloadDescription</key>
+    <string>Legacy mobileconfig equivalent of the com.apple.configuration.webcontent-filter.plugin DDM declaration. The DDM ProviderComposedIdentifier is split into FilterDataProviderBundleIdentifier and FilterDataProviderDesignatedRequirement. The vendor's System Extension / Network Extension app must be installed (managed app) before this profile applies.</string>
+    <key>PayloadOrganization</key>
+    <string>macOS 27 Intune Test Plan</string>
+    <key>PayloadScope</key>
+    <string>System</string>
+</dict>
+</plist>

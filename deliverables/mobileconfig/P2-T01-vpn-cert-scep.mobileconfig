@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <key>PayloadType</key>
+            <string>com.apple.security.scep</string>
+            <key>PayloadIdentifier</key>
+            <string>com.test.macos27.p2-t01.vpn-cert.scep</string>
+            <key>PayloadUUID</key>
+            <string>62AE3DDB-583E-4AF0-BECA-9BF65C06E7BA</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>PayloadDisplayName</key>
+            <string>VPN Client Certificate (SCEP)</string>
+            <key>PayloadContent</key>
+            <dict>
+                <key>Name</key>
+                <string>VPN Client Certificate</string>
+                <key>URL</key>
+                <string>https://scep.yourcompany.com/scep</string>
+                <key>Subject</key>
+                <array>
+                    <array>
+                        <array>
+                            <string>CN</string>
+                            <string>%SerialNumber%</string>
+                        </array>
+                    </array>
+                </array>
+                <key>Challenge</key>
+                <string>REPLACE_WITH_SCEP_CHALLENGE</string>
+                <key>Key Type</key>
+                <string>RSA</string>
+                <key>Keysize</key>
+                <integer>2048</integer>
+                <key>Key Usage</key>
+                <integer>5</integer>
+                <key>Retries</key>
+                <integer>3</integer>
+                <key>RetryDelay</key>
+                <integer>10</integer>
+            </dict>
+        </dict>
+    </array>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadIdentifier</key>
+    <string>com.test.macos27.p2-t01.vpn-cert</string>
+    <key>PayloadUUID</key>
+    <string>0AAE1E18-416F-4DCF-860C-FA0DF47173DA</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+    <key>PayloadDisplayName</key>
+    <string>P2-T01 VPN Client Certificate SCEP (legacy)</string>
+    <key>PayloadDescription</key>
+    <string>Legacy mobileconfig equivalent of the com.apple.asset.credential.scep DDM asset. The DDM {{SERIALNUMBER}} variable is expressed as the legacy %SerialNumber% substitution; in Intune use the Intune SCEP variable form your connector expects.</string>
+    <key>PayloadOrganization</key>
+    <string>macOS 27 Intune Test Plan</string>
+    <key>PayloadScope</key>
+    <string>System</string>
+</dict>
+</plist>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  EXPERIMENTAL — NOT a supported legacy payload.
+  com.apple.configuration.softwareupdate.enforcement.specific (enforce a specific
+  target OS version by a deadline) has NO legacy mobileconfig equivalent. Legacy
+  profiles can only DEFER updates (see the faithful P0-T02-swu-settings.mobileconfig),
+  not force a specific build by a date. macOS will most likely reject or ignore the
+  payload below. Use the DDM JSON declaration for real enforcement.
+-->
+<plist version="1.0">
+<dict>
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <key>PayloadType</key>
+            <string>com.apple.configuration.softwareupdate.enforcement.specific</string>
+            <key>PayloadIdentifier</key>
+            <string>com.test.macos27.p0-t02.swu-enforce.payload</string>
+            <key>PayloadUUID</key>
+            <string>0D57C486-4416-44BE-ADC4-85018FA33EBA</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>PayloadDisplayName</key>
+            <string>Software Update Enforcement (experimental)</string>
+            <key>TargetOSVersion</key>
+            <string>27.0</string>
+            <key>TargetLocalDateTime</key>
+            <string>2026-11-01T09:00:00</string>
+            <key>DetailsURL</key>
+            <string>https://yourcompany.com/macos27-update-info</string>
+        </dict>
+    </array>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadIdentifier</key>
+    <string>com.test.macos27.p0-t02.swu-enforce</string>
+    <key>PayloadUUID</key>
+    <string>A44E1B7B-DFF3-4DD7-8B93-FACFE569AC87</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+    <key>PayloadDisplayName</key>
+    <string>P0-T02 Software Update Enforcement (EXPERIMENTAL)</string>
+    <key>PayloadDescription</key>
+    <string>EXPERIMENTAL best-effort wrapper. No legacy payload exists for specific-version enforcement. Prefer the DDM JSON declaration.</string>
+    <key>PayloadOrganization</key>
+    <string>macOS 27 Intune Test Plan</string>
+    <key>PayloadScope</key>
+    <string>System</string>
+</dict>
+</plist>

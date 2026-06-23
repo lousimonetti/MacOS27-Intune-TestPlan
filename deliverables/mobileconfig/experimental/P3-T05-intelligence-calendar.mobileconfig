@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  EXPERIMENTAL — partial, and the legacy keys are deprecated on macOS 27.
+  Only the three system-wide Apple Intelligence toggles below exist as legacy
+  com.apple.applicationaccess restriction keys (allowWritingTools, allowGenmoji,
+  allowImagePlayground). They were DEPRECATED in the 26.4 release in favor of the
+  com.apple.configuration.intelligence.settings DDM declaration, so on macOS 27 they
+  may be ignored. The per-app controls in the DDM JSON (Calendar natural-language
+  editing, Mail smart replies / summary, Safari summary) have NO legacy equivalent and
+  are intentionally dropped here. Use the DDM JSON declaration for full coverage.
+-->
+<plist version="1.0">
+<dict>
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <key>PayloadType</key>
+            <string>com.apple.applicationaccess</string>
+            <key>PayloadIdentifier</key>
+            <string>com.test.macos27.p3-t05.intelligence-calendar.restrictions</string>
+            <key>PayloadUUID</key>
+            <string>359A67EC-FE42-4128-B8BC-C2F5B05BCD1F</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>PayloadDisplayName</key>
+            <string>Apple Intelligence Restrictions (experimental)</string>
+            <key>allowWritingTools</key>
+            <true/>
+            <key>allowGenmoji</key>
+            <false/>
+            <key>allowImagePlayground</key>
+            <false/>
+        </dict>
+    </array>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadIdentifier</key>
+    <string>com.test.macos27.p3-t05.intelligence-calendar</string>
+    <key>PayloadUUID</key>
+    <string>08F4BE77-CB4C-47B6-9B7E-B53C81279291</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+    <key>PayloadDisplayName</key>
+    <string>P3-T05 Apple Intelligence (EXPERIMENTAL, partial)</string>
+    <key>PayloadDescription</key>
+    <string>EXPERIMENTAL. Only the three system-wide toggles map to legacy restriction keys (deprecated in 26.4). Per-app Intelligence controls are DDM-only. Use the DDM JSON declaration.</string>
+    <key>PayloadOrganization</key>
+    <string>macOS 27 Intune Test Plan</string>
+    <key>PayloadScope</key>
+    <string>System</string>
+</dict>
+</plist>

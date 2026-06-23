@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <key>PayloadType</key>
+            <string>com.apple.vpn.managed</string>
+            <key>PayloadIdentifier</key>
+            <string>com.test.macos27.p2-t01.ikev2-vpn.vpn</string>
+            <key>PayloadUUID</key>
+            <string>3C4D6119-09CF-4709-804E-C0B3692616B5</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>PayloadDisplayName</key>
+            <string>Corporate IKEv2 VPN</string>
+            <key>UserDefinedName</key>
+            <string>Corporate IKEv2 VPN (legacy)</string>
+            <key>VPNType</key>
+            <string>IKEv2</string>
+            <key>IKEv2</key>
+            <dict>
+                <key>RemoteAddress</key>
+                <string>vpn.yourcompany.com</string>
+                <key>AuthenticationMethod</key>
+                <string>Certificate</string>
+                <key>PayloadCertificateUUID</key>
+                <string>62AE3DDB-583E-4AF0-BECA-9BF65C06E7BA</string>
+                <key>ExtendedAuthEnabled</key>
+                <integer>0</integer>
+                <key>IKESecurityAssociationParameters</key>
+                <dict>
+                    <key>EncryptionAlgorithm</key>
+                    <string>AES-256-GCM</string>
+                    <key>IntegrityAlgorithm</key>
+                    <string>SHA2-384</string>
+                    <key>DiffieHellmanGroup</key>
+                    <integer>20</integer>
+                </dict>
+                <key>ChildSecurityAssociationParameters</key>
+                <dict>
+                    <key>EncryptionAlgorithm</key>
+                    <string>AES-256-GCM</string>
+                    <key>IntegrityAlgorithm</key>
+                    <string>SHA2-384</string>
+                    <key>DiffieHellmanGroup</key>
+                    <integer>20</integer>
+                </dict>
+            </dict>
+        </dict>
+    </array>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadIdentifier</key>
+    <string>com.test.macos27.p2-t01.ikev2-vpn</string>
+    <key>PayloadUUID</key>
+    <string>53802AC9-C637-49BC-BC83-F4331905C188</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+    <key>PayloadDisplayName</key>
+    <string>P2-T01 IKEv2 VPN (legacy)</string>
+    <key>PayloadDescription</key>
+    <string>Legacy mobileconfig equivalent of the com.apple.configuration.network.vpn.ikev2 DDM declaration. The DDM ClientCertificateAssetReference is expressed as PayloadCertificateUUID pointing at the SCEP payload in P2-T01-vpn-cert-scep.mobileconfig. Deploy the SCEP profile first; both profiles must be installed for the certificate reference to resolve.</string>
+    <key>PayloadOrganization</key>
+    <string>macOS 27 Intune Test Plan</string>
+    <key>PayloadScope</key>
+    <string>System</string>
+</dict>
+</plist>
