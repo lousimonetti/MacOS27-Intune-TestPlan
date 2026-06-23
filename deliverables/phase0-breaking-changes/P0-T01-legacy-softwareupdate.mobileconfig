@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <key>PayloadType</key>
+            <string>com.apple.SoftwareUpdate</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>PayloadIdentifier</key>
+            <string>com.test.macos27.p0-t01.softwareupdate</string>
+            <key>PayloadUUID</key>
+            <string>A1B2C3D4-0001-0001-0001-000000000001</string>
+            <key>PayloadDisplayName</key>
+            <string>P0-T01 Legacy SoftwareUpdate Test</string>
+            <key>AutomaticCheckEnabled</key>
+            <true/>
+            <key>AutomaticDownload</key>
+            <true/>
+            <key>AutomaticallyInstallMacOSUpdates</key>
+            <false/>
+            <key>CriticalUpdateInstall</key>
+            <true/>
+        </dict>
+    </array>
+    <key>PayloadDisplayName</key>
+    <string>P0-T01 Legacy SoftwareUpdate Test</string>
+    <key>PayloadIdentifier</key>
+    <string>com.test.macos27.p0-t01</string>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadUUID</key>
+    <string>A1B2C3D4-0001-0001-0001-000000000000</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+</dict>
+</plist>

@@ -1,0 +1,19 @@
+{
+  "Type": "com.apple.configuration.softwareupdate.settings",
+  "Identifier": "com.test.macos27.p0-t02.swu-settings",
+  "ServerToken": "",
+  "Payload": {
+    "Notifications": true,
+    "Deferrals": {
+      "MajorPeriodInDays": 14,
+      "MinorPeriodInDays": 7,
+      "SystemPeriodInDays": 3
+    },
+    "AutomaticActions": {
+      "Download": "AlwaysOn",
+      "InstallOSUpdates": "Allowed",
+      "InstallSecurityUpdate": "AlwaysOn"
+    },
+    "AllowStandardUserOSUpdates": false
+  }
+}

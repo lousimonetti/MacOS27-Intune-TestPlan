@@ -1,0 +1,10 @@
+{
+  "Type": "com.apple.configuration.softwareupdate.enforcement.specific",
+  "Identifier": "com.test.macos27.p0-t02.swu-enforce",
+  "ServerToken": "",
+  "Payload": {
+    "TargetOSVersion": "27.0",
+    "TargetLocalDateTime": "2026-11-01T09:00:00",
+    "DetailsURL": "https://yourcompany.com/macos27-update-info"
+  }
+}

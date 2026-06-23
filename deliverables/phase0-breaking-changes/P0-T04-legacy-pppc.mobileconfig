@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <key>PayloadType</key>
+            <string>com.apple.TCC.configuration-profile-policy</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+            <key>PayloadIdentifier</key>
+            <string>com.test.macos27.p0-t04.pppc-legacy</string>
+            <key>PayloadUUID</key>
+            <string>A1B2C3D4-0004-0004-0004-000000000004</string>
+            <key>PayloadDisplayName</key>
+            <string>P0-T04 Legacy PPPC Test</string>
+            <key>Services</key>
+            <dict>
+                <key>Microphone</key>
+                <array>
+                    <dict>
+                        <key>Allowed</key>
+                        <true/>
+                        <key>CodeRequirement</key>
+                        <string>identifier "com.microsoft.teams" and anchor apple generic</string>
+                        <key>Identifier</key>
+                        <string>com.microsoft.teams</string>
+                        <key>IdentifierType</key>
+                        <string>bundleID</string>
+                    </dict>
+                </array>
+                <key>Camera</key>
+                <array>
+                    <dict>
+                        <key>Allowed</key>
+                        <true/>
+                        <key>CodeRequirement</key>
+                        <string>identifier "com.microsoft.teams" and anchor apple generic</string>
+                        <key>Identifier</key>
+                        <string>com.microsoft.teams</string>
+                        <key>IdentifierType</key>
+                        <string>bundleID</string>
+                    </dict>
+                </array>
+            </dict>
+        </dict>
+    </array>
+    <key>PayloadDisplayName</key>
+    <string>P0-T04 Legacy PPPC</string>
+    <key>PayloadIdentifier</key>
+    <string>com.test.macos27.p0-t04</string>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadUUID</key>
+    <string>A1B2C3D4-0004-0004-0004-000000000000</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+</dict>
+</plist>

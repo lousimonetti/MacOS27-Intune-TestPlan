@@ -1,0 +1,27 @@
+{
+  "Type": "com.apple.configuration.app.settings",
+  "Identifier": "com.test.macos27.p0-t05.app-privacy",
+  "ServerToken": "",
+  "Payload": {
+    "Privacy": {
+      "PermissionDefaults": {
+        "com.microsoft.teams (2BUA8C4S2C)": {
+          "OrganizationJustification": "Microsoft Teams requires camera and microphone access for video calls. Your organization uses Teams for all video conferencing.",
+          "Camera": "Allow",
+          "Microphone": "Allow",
+          "Bluetooth": "Allow"
+        },
+        "com.microsoft.onenote (UBF8T346G9)": {
+          "OrganizationJustification": "OneNote requires microphone access for audio note recording.",
+          "Microphone": "Allow"
+        },
+        "com.google.Chrome (EQHXZ8M8AV)": {
+          "OrganizationJustification": "Google Chrome requires camera and microphone access for web-based video conferencing tools.",
+          "Camera": "Allow",
+          "Microphone": "Allow",
+          "LocalNetwork": "Allow"
+        }
+      }
+    }
+  }
+}
