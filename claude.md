@@ -409,6 +409,40 @@ Each artifact is a standalone file ready to upload directly to Intune (mobilecon
 | P3 — New MDM Features | `deliverables/phase3-new-features/` | **Complete** | T01–T05 (5 files) |
 | P4 — Status & Monitoring | `deliverables/phase4-status-monitoring/` | Not started | — |
 | P5 — Setup Assistant / Enrollment | `deliverables/phase5-enrollment/` | Not started | — |
+| `.mobileconfig` conversions (faithful) | `deliverables/mobileconfig/` | **Complete** | 5 files |
+| `.mobileconfig` conversions (experimental) | `deliverables/mobileconfig/experimental/` | **Complete** | 9 files |
+
+### mobileconfig conversion artifacts (built 2026-06-24, merged PR #1)
+
+Both folders are conversions of the DDM JSON declarations for admins who prefer the
+Intune Custom Profile path. The originals `.json` DDM declarations remain the source of truth.
+
+**Faithful (`deliverables/mobileconfig/`)** — real, supported legacy payloads with Intune testing guidance:
+
+| File | Legacy payload type(s) | Source DDM declaration | Notes |
+|---|---|---|---|
+| `P0-T02-swu-settings.mobileconfig` | `com.apple.SoftwareUpdate` + `com.apple.applicationaccess` | `softwareupdate.settings` | `AllowStandardUserOSUpdates` has no legacy key — omitted |
+| `P2-T01-vpn-cert-scep.mobileconfig` | `com.apple.security.scep` | `asset.credential.scep` | Install before the VPN profile; `{{SERIALNUMBER}}` → `%SerialNumber%` |
+| `P2-T01-ikev2-vpn.mobileconfig` | `com.apple.vpn.managed` (IKEv2) | `network.vpn.ikev2` | `PayloadCertificateUUID` references the SCEP payload |
+| `P2-T02-dns-settings.mobileconfig` | `com.apple.dnsSettings.managed` | `network.dns-settings` | Straightforward 1:1 mapping |
+| `P3-T01-content-filter-plugin.mobileconfig` | `com.apple.webcontent-filter` | `webcontent-filter.plugin` | DDM `ProviderComposedIdentifier` split into `BundleIdentifier` + `DesignatedRequirement` |
+
+**Experimental (`deliverables/mobileconfig/experimental/`)** — best-effort wrappers for DDM-only capabilities.
+Each file contains an inline XML warning. See `experimental/README.md` for per-file explanation.
+
+| File | Why it won't reliably apply |
+|---|---|
+| `P0-T02-swu-enforcement.mobileconfig` | No legacy payload enforces a specific OS version by deadline |
+| `P0-T05-app-settings-privacy.mobileconfig` | Legacy PPPC cannot pre-grant Camera/Mic/Bluetooth/LocalNetwork |
+| `P1-T01-binary-allowlist.mobileconfig` | Binary allowlisting is DDM-only |
+| `P1-T02-binary-denylist.mobileconfig` | Binary deny control is DDM-only |
+| `P1-T03-managed-apps-passthrough.mobileconfig` | Binary control is DDM-only |
+| `P2-T03-always-on-vpn.mobileconfig` | Legacy always-on VPN schema diverges from DDM TunnelConfigurations shape |
+| `P2-T04-network-relay.mobileconfig` | Network relay is DDM-only |
+| `P3-T02-content-cache.mobileconfig` | No legacy payload accepts full content-cache key set |
+| `P3-T05-intelligence-calendar.mobileconfig` | Legacy restriction keys deprecated in 26.4; per-app controls are DDM-only |
+
+P3-T03 / P3-T04 are MDM commands — no profile wrapper produced (non-convertible by design).
 
 ### Phase 0 artifacts (built 2026-06-23)
 
